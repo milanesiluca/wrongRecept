@@ -3,8 +3,7 @@ document.querySelector(".logo-text").style.color = "rgb(56, 66, 65)";
 
 //step 2. The alignment of the elements inside the header element are wrong. Change it to the correct one
 const elementHeader = document.getElementsByTagName("header");
-elementHeader[0].setAttribute("display", "flex");
-elementHeader[0].setAttribute("justify-content", "left");
+
 
 
 //step 3. The header has a border at the bottom, but it has the wrong color. Change it do the correct one.
@@ -42,6 +41,31 @@ bottomIngredientList.appendChild(ingredientOne);
 const ingredientTwo = document.createElement("li");
 ingredientTwo.innerText = "Lite smör";
 bottomIngredientList.appendChild(ingredientTwo);
+
+
+//step 10. The third ingredient in the list of ingredients to the paste is wrong. Change that specific ingredient to the correct one
+const creamIngredientsList = document.querySelector(".ingredients-list-paste");
+const wrongIngredient = creamIngredientsList.children[2];
+const rightIngredient = document.createElement("li");
+rightIngredient.innerText =  "3dl vispgrädde";
+creamIngredientsList.replaceChild(rightIngredient, wrongIngredient);
+
+//step 11. There is also a missing ingredient in the list of ingredients to the paste. Look and see what it is and add that one the the end of the list.
+const lastCreamIngredient = "<li>400g naturell philadelphiaost</li>"
+creamIngredientsList.insertAdjacentHTML("beforeend", lastCreamIngredient);
+
+//step 12. The text "Instructions" to the left, beneath the image, has some shadow styling applied to it. Remove that styling.
+const instructionTitleContainer = document.querySelector(".shadow");
+instructionTitleContainer.classList.remove("shadow")
+
+//step 13. Two list elements of the list of instructions are incorrect. Find them and change them to the correct ones.
+const instructionListContainer = document.querySelector(".instructions-list");
+const instructionList = instructionListContainer.children;
+
+instructionList[1].innerText = "Separera ägggulor och äggvitor. Äggvitorna lägger du i en stor bunke, äggulorna i en liten bunke";
+instructionList[8].innerText = "Ställ in i frysen över natten."
+
+
 
 
 
